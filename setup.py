@@ -1,34 +1,28 @@
-# setup.py
+from setuptools import setup, find_packages
 
-import setuptools
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    name="pushpit-kamboj-102203281",  # Replace with your "Topsis-FirstName-RollNumber"
-    version="0.0.1",
-    author="Shyam",
-    author_email="pushpitkamboj@gmail.com",
-    description="A Python package for TOPSIS analysis",
-    long_description=long_description,
+setup(
+    name="topsis-PranavDevKhindria-102203279",            # Package name on PyPI
+    version="0.2.0",                             # Package version
+    author="Pranav",
+    description="A Python package to perform Topsis analysis.",
+    long_description=open("README.md", "r").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/pushpitkamboj/pushpit-kamboj-102203281",  # optional, if you have a public repo
-    packages=setuptools.find_packages(),
+    url="https://github.com/oxzoid/Topsis-package",
+    packages=find_packages(),                    # Automatically find subpackages
+    include_package_data=True,                   # If you have data files, etc.
     install_requires=[
         "pandas",
         "numpy"
     ],
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
-    ],
     entry_points={
         "console_scripts": [
-            # the left side is the command (e.g. "topsis") you want to run in terminal
-            # the right side is "packageName.moduleName:functionName"
-            "topsis = pushpit_kamboj_102203281.topsis:main"
+            "topsis-calc=topsis_PranavDevKhindria_102203279.main:main"
         ]
     },
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent"
+    ],
     python_requires='>=3.6',
 )
